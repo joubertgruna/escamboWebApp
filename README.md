@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 up# 🔄 Escambo – Plataforma de Trocas
 
 > Troque itens diretamente com outras pessoas, sem comprar nem vender.
@@ -24,9 +25,6 @@ A proposta é simples:
 
 ### Pré-requisitos
 
-- Node.js 20+
-- MySQL 8+
-- npm 10+
 
 ### Instalação
 
@@ -69,24 +67,9 @@ EscamboWebApp/
 
 ## 📚 Documentação
 
-- [Planejamento Completo](docs/PLANEJAMENTO_ESCAMBO.md)
-- [Arquitetura](docs/ARQUITETURA.md)
-- [Modelo ER](docs/MODELO_ER.md)
-- [Fluxo de Telas](docs/FLUXO_TELAS.md)
-- [User Stories](docs/USER_STORIES.md)
-- [Backlog](docs/BACKLOG.md)
-- [Estrutura de Pastas](docs/ESTRUTURA_PASTAS.md)
 
 ## 🔑 Funcionalidades
 
-- ✅ Cadastro e autenticação (JWT)
-- ✅ Publicação de itens com fotos
-- ✅ Feed de itens (estilo Instagram)
-- ✅ Sistema de curtidas (swipe)
-- ✅ Match automático
-- ✅ Chat em tempo real
-- ✅ Anúncios antes do chat
-- ✅ PWA (offline-first, instalável)
 
 ## 🤝 Contribuição
 
@@ -95,3 +78,6 @@ Pull requests são bem-vindos. Siga o padrão de commits e mantenha testes atual
 ## 📄 Licença
 
 MIT © Joubert Gabriel
+=======
+test commit
+>>>>>>> ed6a1af4e8196acc075eb2701d1d80b69ae83928
