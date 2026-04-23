@@ -1,0 +1,100 @@
+# Docker Compose Unificado - Escambo MVP
+# Tudo em Docker: MySQL + Backend + Frontend + Nginx
+# Data: 12 de março de 2026
+
+services:
+  # ========================================
+  # DATABASE - MySQL 8.0
+  # ========================================
+  mysql:
+    image: mysql:8.0
+    container_name: escambo-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: escambo_dev
+      MYSQL_USER: escambo
+      MYSQL_PASSWORD: escambo123
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - escambo-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ========================================
+  # BACKEND - Express.js + Node.js
+  # ========================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: escambo-backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: escambo
+      DB_PASSWORD: escambo123
+      DB_NAME: escambo_dev
+      JWT_SECRET: dev-secret-change-in-production
+      PORT: 3000
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - backend_uploads:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - escambo-network
+    command: sh -c "npm run migrate && npm run seed && npm run dev"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ========================================
+  # FRONTEND - Vue.js + Vite
+  # ========================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: escambo-frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3000/api
+      VITE_SOCKET_URL: http://localhost:3000
+    ports:
+      - '5173:5173'
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - escambo-network
+
+# ========================================
+# NETWORKS
+# ========================================
+networks:
+  escambo-network:
+    driver: bridge
+
+# ========================================
+# VOLUMES
+# ========================================
+volumes:
+  mysql_data:
+  backend_uploads:

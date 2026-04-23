@@ -1,0 +1,723 @@
+{
+  "data_analise": "2026-03-20",
+  "projeto": "Escambo - Frontend Next.js",
+  "resumo_executivo": {
+    "total_componentes": 8,
+    "total_rotas": 11,
+    "status_responsividade": "PARCIAL",
+    "paginas_faltando": 3,
+    "score_geral": "7.2/10"
+  },
+  "componentes_ui": {
+    "Button": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Button.tsx",
+      "responsive_breakpoints": [
+        "sm:h-12",
+        "sm:px-6"
+      ],
+      "detalhes": {
+        "font_size": "✅ Responsivo - base, sm:lg",
+        "padding": "✅ Responsivo - sm/md/lg com breakpoints",
+        "hover": "✅ Hover com shadow e color transition",
+        "ripple_effect": "✅ active:scale-[0.98]",
+        "focus_state": "✅ focus-visible:ring com offset",
+        "disabled_state": "✅ disabled:opacity-50"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar loading spinner melhorado",
+        "Considerar adding MD breakpoint para tablet"
+      ]
+    },
+    "Input": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Input.tsx",
+      "responsive_breakpoints": [
+        "sm:h-13",
+        "sm:px-4",
+        "sm:rounded-xl"
+      ],
+      "detalhes": {
+        "font_size": "✅ Responsivo - base (16px)",
+        "height": "✅ h-12 mobile, sm:h-13 tablet",
+        "padding": "✅ Progressivo com left/right variação",
+        "focus_state": "✅ focus:ring-4 com escambo-primary/10",
+        "label_color_transition": "✅ Muda cor ao focar",
+        "error_handling": "✅ Feedback visual completo"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar md: breakpoints para desktop",
+        "Considerar suporte a clearable input",
+        "Adicionar character counter opcional"
+      ]
+    },
+    "Card": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Card.tsx",
+      "responsive_breakpoints": [
+        "padding variations - sm/md/lg"
+      ],
+      "detalhes": {
+        "border_radius": "✅ rounded-2xl suave",
+        "shadow": "✅ Shadow suave com hover elevação",
+        "padding_options": "✅ 4 variações (none/sm/md/lg)",
+        "hover_effect": "✅ hover:-translate-y-0.5 com shadow upgrade"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar responsive padding (px-4 sm:px-6)",
+        "Considerar Card variants (elevated, outlined)"
+      ]
+    },
+    "Avatar": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Avatar.tsx",
+      "responsive_breakpoints": [
+        "5 tamanhos: xs/sm/md/lg/xl"
+      ],
+      "detalhes": {
+        "tamanhos": "✅ xs(8), sm(10), md(12), lg(16), xl(24)",
+        "fallback_icon": "✅ Escala com tamanho",
+        "online_indicator": "✅ Com border responsivo",
+        "loading_image": "✅ Error handling com fallback"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar skeleton loading",
+        "Considerar badge positioning customizable"
+      ]
+    },
+    "Badge": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Badge.tsx",
+      "responsive_breakpoints": [
+        "sm/md sizes"
+      ],
+      "detalhes": {
+        "variantes": "✅ 6 variações de cores",
+        "tamanhos": "✅ sm/md com padding apropriado",
+        "dot_indicator": "✅ Ponto colorido opcional",
+        "typography": "✅ Font medium com color variação"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar lg size para headers",
+        "Considerar icon support"
+      ]
+    },
+    "Loading": {
+      "status": "⚠️ PARCIAL",
+      "arquivo": "/components/ui/Loading.tsx",
+      "responsive_breakpoints": [
+        "size variations"
+      ],
+      "detalhes": {
+        "spinner": "✅ Spinner animado",
+        "skeleton": "✅ Skeleton components para placeholders"
+      },
+      "issues": [
+        "❌ Skeleton não responsivo (tamanho fixo)"
+      ],
+      "recomendacoes": [
+        "Tornar skeleton responsivo com sm/md/lg",
+        "Adicionar shimmer animation"
+      ]
+    },
+    "Modal": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Modal.tsx",
+      "responsive_breakpoints": [
+        "max-w adaptive"
+      ],
+      "detalhes": {
+        "backdrop": "✅ Overlay com blur",
+        "responsividade": "✅ Modal adapta ao tamanho da tela"
+      },
+      "issues": [],
+      "recomendacoes": []
+    },
+    "Toast": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/ui/Toast.tsx",
+      "responsive_breakpoints": [
+        "position: fixed com padding"
+      ],
+      "detalhes": {
+        "posicionamento": "✅ Bottom right com safe-area",
+        "animacao": "✅ Slide up suave"
+      },
+      "issues": [],
+      "recomendacoes": []
+    }
+  },
+  "componentes_layout": {
+    "BottomNav": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/layout/BottomNav.tsx",
+      "responsive_breakpoints": [],
+      "detalhes": {
+        "safe_area_bottom": "✅ pb-[env(safe-area-inset-bottom)]",
+        "fixed_position": "✅ fixed bottom-0",
+        "notch_support": "✅ Suporta notch/safe areas",
+        "items": "✅ 5 itens com FAB central",
+        "altura": "h-16 (64px)",
+        "main_button": "✅ FAB com -mt-4 para sobreposição"
+      },
+      "issues": [
+        "❌ Sem padding-bottom na main content (pode sobrepor)"
+      ],
+      "recomendacoes": [
+        "Verificar pb-20 na main layout",
+        "Adicionar swipe gesture support"
+      ]
+    },
+    "Header": {
+      "status": "✅ CORRETO",
+      "arquivo": "/components/layout/Header.tsx",
+      "responsive_breakpoints": [],
+      "detalhes": {
+        "safe_area_top": "✅ pt-[env(safe-area-inset-top)]",
+        "sticky": "✅ sticky top-0 z-40",
+        "glass_effect": "✅ bg-white/80 backdrop-blur-xl",
+        "button_height": "w-10 h-10 (40px)",
+        "title": "✅ lg vs large sizing",
+        "back_button": "✅ Com smooth navigation"
+      },
+      "issues": [],
+      "recomendacoes": [
+        "Adicionar md: breakpoints para title tamanho"
+      ]
+    },
+    "FeedCard": {
+      "status": "⚠️ PARCIAL",
+      "arquivo": "/components/feed/FeedCard.tsx",
+      "responsive_breakpoints": [
+        "p-4 fixed"
+      ],
+      "detalhes": {
+        "image_aspect_ratio": "✅ aspect-square",
+        "photo_navigation": "✅ Click left/right para navegar",
+        "double_tap_like": "✅ Duplo clique para curtir",
+        "typography": "text-lg/text-sm sizes fixed"
+      },
+      "issues": [
+        "⚠️ Padding fixo (p-4) sem responsividade",
+        "⚠️ Badge padding sem breakpoint",
+        "⚠️ Action buttons sem responsive sizing"
+      ],
+      "recomendacoes": [
+        "Adicionar sm:p-6 para padding responsivo",
+        "Button sizes responsivos",
+        "Considerar bottom-sheet para ações em mobile"
+      ]
+    },
+    "ItemCard": {
+      "status": "⚠️ PARCIAL",
+      "arquivo": "/components/items/ItemCard.tsx",
+      "responsive_breakpoints": [
+        "p-4 fixed"
+      ],
+      "detalhes": {
+        "image_aspect_ratio": "✅ aspect-square",
+        "buttons": "w-14/w-16 fixed sizes",
+        "animation": "✅ whileHover/whileTap com Framer Motion",
+        "overlay": "✅ Gradient overlay suave"
+      },
+      "issues": [
+        "⚠️ Button sizes fixos (w-14, w-16) - não responsivo",
+        "⚠️ Sem breakpoints para mobile/tablet",
+        "⚠️ Text overlay size fixo"
+      ],
+      "recomendacoes": [
+        "Tornar button sizes responsivos",
+        "Ajustar text sizes com breakpoints",
+        "Considerar touch-friendly button sizes"
+      ]
+    }
+  },
+  "rotas_paginas": {
+    "autenticacao": {
+      "login": {
+        "status": "✅ EXISTE",
+        "caminho": "/login",
+        "arquivo": "/app/login/page.tsx",
+        "responsive": "Não verificado"
+      },
+      "register": {
+        "status": "✅ EXISTE",
+        "caminho": "/register",
+        "arquivo": "/app/register/page.tsx",
+        "responsive": "Não verificado"
+      }
+    },
+    "main_routes": {
+      "feed": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/feed",
+        "arquivo": "/app/(main)/feed/page.tsx",
+        "detalhes": {
+          "layout": "✅ Infinite scroll com observer",
+          "responsive": "⚠️ Padding fixo (px-4 sm:px-6)",
+          "spacing": "✅ space-y-6 entre cards",
+          "empty_state": "✅ Mensagem com icon"
+        },
+        "issues": [
+          "⚠️ max-w-2xl pode ser grande em tablet"
+        ]
+      },
+      "likes": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/likes",
+        "arquivo": "/app/(main)/likes/page.tsx",
+        "detalhes": {
+          "grid": "✅ grid-cols-2 gap-3",
+          "responsive": "✅ Grid 2 colunas fixo",
+          "empty_state": "✅ Mensagem com icon",
+          "animation": "✅ Staggered animation"
+        },
+        "issues": [
+          "⚠️ Grid fixo em 2 colunas (não muda em tablet/desktop)",
+          "⚠️ Sem md:grid-cols-3 ou lg:grid-cols-4"
+        ]
+      },
+      "matches": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/matches",
+        "arquivo": "/app/(main)/matches/page.tsx",
+        "detalhes": {
+          "carousel": "✅ Horizontal scroll com overflow-x-auto",
+          "lista": "✅ space-y-2 entre matches",
+          "responsive": "✅ Avatar sizes responsivos",
+          "empty_state": "✅ Mensagem clara"
+        },
+        "issues": [
+          "⚠️ Carousel sem scroll indicators",
+          "⚠️ Sem padding safe area em carousel"
+        ]
+      },
+      "profile": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/profile",
+        "arquivo": "/app/(main)/profile/page.tsx",
+        "detalhes": {
+          "header": "✅ Card com profile info",
+          "stats": "✅ 3 stats em row",
+          "menu": "✅ 6 menu items",
+          "animation": "✅ Staggered motion"
+        },
+        "issues": [
+          "⚠️ Menu items sem hover:bg-gray-50 em mobile pode ser invisível"
+        ]
+      },
+      "create_item": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/create-item",
+        "arquivo": "/app/(main)/create-item/page.tsx",
+        "detalhes": {
+          "steps": "✅ 3 steps multi-form",
+          "photos": "✅ Grid 3 colunas para preview",
+          "categories": "✅ grid-cols-2 com breakpoints",
+          "conditions": "✅ Radio buttons customizados",
+          "responsive": "⚠️ Grid fixo 3 colunas"
+        },
+        "issues": [
+          "⚠️ Photo grid grid-cols-3 fixo (muito pequeno em mobile)",
+          "⚠️ Sem md: breakpoints",
+          "⚠️ Textarea sem character counter"
+        ]
+      },
+      "edit_profile": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/edit-profile",
+        "arquivo": "/app/(main)/edit-profile/page.tsx",
+        "detalhes": {
+          "avatar": "✅ Avatar grande com camera button",
+          "form": "✅ 4 inputs com icons",
+          "responsividade": "✅ Inputs full-width"
+        },
+        "issues": []
+      },
+      "my_items": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/my-items",
+        "arquivo": "/app/(main)/my-items/page.tsx",
+        "detalhes": {
+          "lista": "✅ Item rows com image thumbnail",
+          "actions": "✅ View/Edit/Delete buttons",
+          "menu": "✅ Dropdown menu",
+          "empty_state": "✅ Mensagem clara"
+        },
+        "issues": [
+          "⚠️ Image size fixo (w-24 h-24) pode ser pequeno em tablet"
+        ]
+      },
+      "items_detail": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/items/[id]",
+        "arquivo": "/app/(main)/items/[id]/page.tsx",
+        "detalhes": {
+          "responsividade": "Não totalmente verificado"
+        }
+      },
+      "edit_item": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/edit-item/[id]",
+        "arquivo": "/app/(main)/edit-item/[id]/page.tsx",
+        "detalhes": {
+          "responsividade": "Não totalmente verificado"
+        }
+      },
+      "chat": {
+        "status": "✅ EXISTE",
+        "caminho": "/(main)/chat/[id]",
+        "arquivo": "/app/(main)/chat/[id]/page.tsx",
+        "detalhes": {
+          "responsividade": "Não totalmente verificado"
+        }
+      }
+    },
+    "rotas_faltando": {
+      "notifications": {
+        "status": "❌ FALTANDO",
+        "caminho": "/(main)/notifications",
+        "prioridade": "ALTA",
+        "recomendacoes": [
+          "Criar /app/(main)/notifications/page.tsx",
+          "Incluir lista de notificações com tipos: like, match, message, trade_accepted",
+          "Implementar notificações com timestamps",
+          "Adicionar botão para limpar notificações",
+          "Suportar notificações em tempo real (WebSocket)"
+        ],
+        "exemplo_items": [
+          "João curtiu seu item 'iPhone 12'",
+          "Maria quer trocar com você",
+          "Nova mensagem de Pedro",
+          "Sua troca foi aceita"
+        ]
+      },
+      "settings": {
+        "status": "❌ FALTANDO",
+        "caminho": "/(main)/settings",
+        "prioridade": "ALTA",
+        "recomendacoes": [
+          "Criar /app/(main)/settings/page.tsx",
+          "Incluir settings: privacidade, notificações, idioma, tema",
+          "Adicionar toggle switches para notificações",
+          "Privacy controls (quem pode ver perfil)",
+          "Opção de dark mode"
+        ],
+        "exemplo_sections": [
+          "Notificações",
+          "Privacidade",
+          "Preferências",
+          "Suporte"
+        ]
+      },
+      "help": {
+        "status": "❌ FALTANDO",
+        "caminho": "/(main)/help",
+        "prioridade": "MÉDIA",
+        "recomendacoes": [
+          "Criar /app/(main)/help/page.tsx",
+          "Incluir FAQ, contato, termos de serviço",
+          "FAQ com categorias (como usar, problemas, conta)",
+          "Link para contato/suporte",
+          "Link para termos e privacidade"
+        ],
+        "exemplo_sections": [
+          "FAQ",
+          "Como funciona",
+          "Contato",
+          "Sobre"
+        ]
+      }
+    }
+  },
+  "analise_responsividade": {
+    "font_sizes": {
+      "status": "⚠️ PARCIAL",
+      "detalhes": {
+        "desktop": "✅ Definidos na globals.css (h1-h3, p)",
+        "mobile": "✅ Base de 16px",
+        "breakpoints": "⚠️ Poucos sm: breakpoints em componentes"
+      },
+      "problemas": [
+        "FeedCard: Title text-lg fixo, deveria ser sm:text-xl",
+        "ItemCard: Text overlay sem size responsivo",
+        "Create-item: Input labels e descrição sem breakpoints"
+      ]
+    },
+    "spacing_padding": {
+      "status": "⚠️ PARCIAL",
+      "detalhes": {
+        "container": "✅ Container responsivo com px-4 sm:px-6",
+        "componentes": "⚠️ Padding frequentemente fixo (p-4, p-3, p-5)"
+      },
+      "problemas": [
+        "Card padding variations não responsivas",
+        "FeedCard: p-4 fixo em header/content/footer",
+        "CreateItem: Grid photos com grid-cols-3 fixo em mobile"
+      ]
+    },
+    "touch_friendly": {
+      "status": "✅ BOM",
+      "detalhes": {
+        "button_sizes": "✅ Minimo h-10 (40px)",
+        "tap_targets": "✅ w-10 h-10 ou maior",
+        "spacing": "✅ Gap mínimo de 8px entre elementos"
+      },
+      "problemas": []
+    },
+    "safe_areas": {
+      "status": "✅ BOM",
+      "detalhes": {
+        "top": "✅ Header usa pt-[env(safe-area-inset-top)]",
+        "bottom": "✅ BottomNav usa pb-[env(safe-area-inset-bottom)]",
+        "layout": "✅ Main layout tem pb-20 para Bottom Nav"
+      },
+      "problemas": [
+        "⚠️ Carousel em matches pode não respeitar safe area"
+      ]
+    },
+    "aspect_ratios": {
+      "status": "✅ BOM",
+      "detalhes": {
+        "item_cards": "✅ aspect-square para fotos",
+        "images": "✅ object-cover para scaling"
+      },
+      "problemas": []
+    },
+    "lazy_loading": {
+      "status": "❌ NÃO IMPLEMENTADO",
+      "problemas": [
+        "Images não têm loading=\"lazy\"",
+        "Sem Suspense boundaries",
+        "Sem image optimization Next.js"
+      ],
+      "recomendacoes": [
+        "Usar next/image em vez de <img>",
+        "Adicionar priority prop onde necessário",
+        "Implementar Suspense com fallback"
+      ]
+    },
+    "infinite_scroll": {
+      "status": "✅ IMPLEMENTADO",
+      "detalhes": {
+        "feed": "✅ Infinite scroll com intersection observer",
+        "hook": "✅ useInfiniteScroll customizado"
+      }
+    }
+  },
+  "mobile_first_approach": {
+    "status": "⚠️ PARCIAL",
+    "detalhes": {
+      "viewport": "✅ Correto no layout.tsx",
+      "max_width": "✅ max-w-lg/max-w-2xl definidos",
+      "grid_layout": "⚠️ Grid 2-3 colunas fixo sem responsive",
+      "breakpoints": "⚠️ Poucos breakpoints definidos"
+    },
+    "problemas": [
+      "❌ Grid photos no create-item é grid-cols-3 fixo (muito pequeno em mobile)",
+      "❌ Likes page é grid-cols-2 fixo (sem md:grid-cols-3)",
+      "❌ Poucos sm:/md:/lg: breakpoints aplicados"
+    ],
+    "recomendacoes": [
+      "Revisar grids e torná-los verdadeiramente mobile-first",
+      "Adicionar md: breakpoints onde apropriado",
+      "Considerar lg: breakpoints para desktop"
+    ]
+  },
+  "notificacoes": {
+    "status": "✅ IMPLEMENTADO",
+    "detalhes": {
+      "hook": "✅ useToast hook customizado",
+      "toast_component": "✅ Toast.tsx com animação",
+      "feedback": "✅ success/error/warning types"
+    },
+    "problemas": []
+  },
+  "carousels": {
+    "status": "✅ IMPLEMENTADO",
+    "detalhes": {
+      "matches": "✅ overflow-x-auto para horizontal scroll",
+      "scrollbar": "✅ scrollbar-hide class customizado"
+    },
+    "problemas": [
+      "⚠️ Sem scroll indicators (dots/numbers)",
+      "⚠️ Sem snap-scroll behavior"
+    ]
+  },
+  "dark_mode": {
+    "status": "❌ NÃO IMPLEMENTADO",
+    "recomendacoes": [
+      "Considerar adicionar suporte com next-themes",
+      "Usar CSS variables para dark variant colors",
+      "Testar todos componentes em dark mode"
+    ]
+  },
+  "performance": {
+    "status": "⚠️ PRECISA_MELHORIAS",
+    "problemas": [
+      "❌ Sem lazy loading de imagens",
+      "❌ Sem image optimization (next/image)",
+      "❌ Sem code splitting adequado",
+      "⚠️ Sem caching strategy"
+    ],
+    "recomendacoes": [
+      "Migrar todas <img> para next/image",
+      "Implementar Suspense boundaries",
+      "Adicionar loading states",
+      "Considerar React.memo para cards"
+    ]
+  },
+  "resumo_achados": {
+    "positivos": [
+      "✅ Ótima estrutura de componentes reutilizáveis",
+      "✅ Bom suporte a safe areas (notch)",
+      "✅ Touch-friendly tap targets",
+      "✅ Animações smooth com Framer Motion",
+      "✅ Input com ótimo UX (focus states, labels)",
+      "✅ BottomNav com FAB bem implementado",
+      "✅ Infinite scroll funcionando bem"
+    ],
+    "problemas_principais": [
+      "⚠️ Breakpoints inconsistentes entre componentes",
+      "⚠️ Grids fixos sem responsividade",
+      "⚠️ Sem lazy loading de imagens",
+      "❌ 3 páginas principais faltando (notifications, settings, help)",
+      "❌ Sem dark mode support",
+      "❌ Image optimization não implementado"
+    ],
+    "prioridade_alta": [
+      "1. Implementar /notifications página",
+      "2. Implementar /settings página",
+      "3. Implementar /help página",
+      "4. Migrar <img> para next/image",
+      "5. Tornar grids responsivos (mobile-first)"
+    ],
+    "prioridade_media": [
+      "1. Adicionar md:/lg: breakpoints consistentemente",
+      "2. Implementar dark mode",
+      "3. Adicionar scroll indicators em carousels",
+      "4. Implementar Suspense boundaries",
+      "5. Adicionar skeleton loading responsivo"
+    ]
+  },
+  "recomendacoes_gerais": {
+    "responsive_design": [
+      "Criar constantes de breakpoints tailwind no tailwind.config.js",
+      "Aplicar mobile-first consistentemente (base mobile, depois sm:, md:, lg:)",
+      "Testar em: 320px, 375px, 768px, 1024px, 1440px widths",
+      "Usar container queries para componentes truly responsive"
+    ],
+    "performance": [
+      "Migrar todas imagens para next/image",
+      "Adicionar blur placeholder para imagens",
+      "Implementar image srcSet para diferentes sizes",
+      "Adicionar Suspense para loading states"
+    ],
+    "acessibilidade": [
+      "Adicionar aria-labels em buttons de ícone",
+      "Implementar keyboard navigation (Tab, Enter)",
+      "Testar com screen reader",
+      "Verificar color contrast ratios"
+    ],
+    "testes": [
+      "Criar tests com Vitest para componentes UI",
+      "E2E tests com Playwright para fluxos críticos",
+      "Visual regression tests com Percy ou similar",
+      "Performance tests com Lighthouse"
+    ]
+  },
+  "arquivos_para_criar": {
+    "notifications": {
+      "path": "/app/(main)/notifications/page.tsx",
+      "template": "List-based page com timestamp e types",
+      "estimated_lines": 150
+    },
+    "settings": {
+      "path": "/app/(main)/settings/page.tsx",
+      "template": "Toggle switches + select dropdowns",
+      "estimated_lines": 200
+    },
+    "help": {
+      "path": "/app/(main)/help/page.tsx",
+      "template": "FAQ accordion + contact info",
+      "estimated_lines": 120
+    }
+  },
+  "checklist_fixes": [
+    {
+      "tarefa": "Converter <img> para <Image>",
+      "arquivos": [
+        "FeedCard.tsx",
+        "ItemCard.tsx",
+        "LikesPage.tsx",
+        "MatchesPage.tsx",
+        "ProfilePage.tsx",
+        "EditProfilePage.tsx"
+      ],
+      "prioridade": "ALTA",
+      "tempo_estimado": "2-3h"
+    },
+    {
+      "tarefa": "Tornar photo grid responsivo",
+      "arquivos": [
+        "CreateItemPage.tsx (grid-cols-3 → grid-cols-2 sm:grid-cols-3)"
+      ],
+      "prioridade": "ALTA",
+      "tempo_estimado": "30min"
+    },
+    {
+      "tarefa": "Adicionar md:/lg: breakpoints",
+      "arquivos": [
+        "LikesPage (grid-cols-2 → md:grid-cols-3 lg:grid-cols-4)",
+        "FeedCard (padding responsivo)",
+        "ItemCard (button sizes responsivos)"
+      ],
+      "prioridade": "MÉDIA",
+      "tempo_estimado": "2h"
+    },
+    {
+      "tarefa": "Criar 3 páginas faltando",
+      "arquivos": [
+        "/notifications/page.tsx",
+        "/settings/page.tsx",
+        "/help/page.tsx"
+      ],
+      "prioridade": "ALTA",
+      "tempo_estimado": "4-5h"
+    },
+    {
+      "tarefa": "Implementar dark mode",
+      "arquivos": [
+        "globals.css",
+        "layout.tsx",
+        "providers.tsx"
+      ],
+      "prioridade": "BAIXA",
+      "tempo_estimado": "3-4h"
+    },
+    {
+      "tarefa": "Adicionar Suspense boundaries",
+      "arquivos": [
+        "layout.tsx",
+        "Todas as rotas principais"
+      ],
+      "prioridade": "MÉDIA",
+      "tempo_estimado": "2-3h"
+    }
+  ],
+  "score_por_categoria": {
+    "componentes_ui": "8.5/10",
+    "layout": "8/10",
+    "responsividade": "6.5/10",
+    "pages_completeness": "6/10",
+    "performance": "5/10",
+    "mobile_first": "6.5/10",
+    "accessibility": "7/10",
+    "overall": "7.2/10"
+  }
+}

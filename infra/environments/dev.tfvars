@@ -1,0 +1,11 @@
+aws_region        = "us-east-1"
+environment       = "dev"
+project_name      = "escambo"
+vpc_cidr          = "10.0.0.0/16"
+public_subnets    = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnets   = ["10.0.10.0/24", "10.0.20.0/24"]
+db_instance_class = "db.t3.micro"
+db_name           = "escambo_dev"
+db_username       = "admin"
+ec2_instance_type = "t3.micro"
+ec2_key_name      = "escambo-dev-key"

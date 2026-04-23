@@ -1,0 +1,12 @@
+id,name,email,phone,avatar_url,bio,city,state,created_at,updated_at
+31,João Silva,joao@example.com,11999998888,https://i.pravatar.cc/150?img=1,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+32,Maria Santos,maria@example.com,11988887777,https://i.pravatar.cc/150?img=2,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+33,Carlos Oliveira,carlos@example.com,21987776666,https://i.pravatar.cc/150?img=3,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+34,Ana Costa,ana@example.com,31986665555,https://i.pravatar.cc/150?img=4,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+35,Pedro Ferreira,pedro@example.com,41985554444,https://i.pravatar.cc/150?img=5,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+36,Lucia Martins,lucia@example.com,71984443333,https://i.pravatar.cc/150?img=6,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+37,Roberto Alves,roberto@example.com,81983332222,https://i.pravatar.cc/150?img=7,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+38,Daniela Costa,daniela@example.com,85982221111,https://i.pravatar.cc/150?img=8,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+39,Felipe Sousa,felipe@example.com,61981110000,https://i.pravatar.cc/150?img=9,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+40,Juliana Rocha,juliana@example.com,92988889999,https://i.pravatar.cc/150?img=10,, , ,2026-03-30T17:46:13.000Z,2026-03-30T17:46:13.000Z
+42,Joubert,joubert.idebrasil@gmail.com,31991896725,/uploads/242f0ca6-f3b8-4f14-b7fa-27da48e3ba6a.webp,, , ,2026-03-30T17:48:30.000Z,2026-03-30T21:03:44.000Z

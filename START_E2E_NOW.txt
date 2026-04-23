@@ -1,0 +1,99 @@
+# 🎯 PRÓXIMO: E2E TESTING (30 min)
+
+## O QUE FAZER AGORA
+
+### Opção 1: Ultra-rápido (10 linhas)
+```
+Arquivo: /E2E_QUICK.txt
+
+9 testes, 30 minutos
+Checklist simples
+```
+
+### Opção 2: Detalhado (recomendado)
+```
+Arquivo: /E2E_EXECUTION.md
+
+9 testes com passo-a-passo completo
+Checklist por teste
+Template para bugs
+```
+
+### Opção 3: Visual
+```
+Arquivo: /E2E_VISUAL_GUIDE.md
+
+Ver o que esperar visualmente
+Exemplos de bugs comuns
+Performance esperada
+```
+
+---
+
+## 3 PASSOS AGORA
+
+### 1. Setup (30 sec)
+```
+1. http://localhost:5173
+2. F12 (DevTools)
+3. Cmd+Shift+M (Mobile)
+4. iPhone 12 Pro
+```
+
+### 2. Testes (30 min)
+```
+Seguir /E2E_EXECUTION.md
+9 testes, 22 min + buffer 8 min
+Marcar [✓] conforme completa
+```
+
+### 3. Resultado (1 min)
+```
+Se OK: Próximo é Lightbox ✓
+Se Bug: Documentar e continuar ✓
+```
+
+---
+
+## TESTES CRÍTICOS ⭐
+
+```
+TESTE 3: Swipe Direita
+└─ Arrastar item para DIREITA
+└─ Esperado: ♥ Verde, POST /api/likes 201
+
+TESTE 4: Swipe Esquerda
+└─ Arrastar item para ESQUERDA
+└─ Esperado: ✗ Vermelho, DELETE /api/likes 200
+```
+
+---
+
+## ⏱️ TIME BUDGET
+
+```
+10:00 - 10:05  Testes 1-2 (Setup)
+10:05 - 10:10  Teste 3 (Swipe Direita) ⭐
+10:10 - 10:15  Teste 4 (Swipe Esquerda) ⭐
+10:15 - 10:20  Testes 5-6 (Navegação)
+10:20 - 10:25  Testes 7-9 (Secundários)
+10:25 - 10:30  Bugs + Buffer
+
+= Exatamente 30 minutos
+```
+
+---
+
+## VÁ AGORA!
+
+**Arquivo:** /E2E_EXECUTION.md (ou E2E_QUICK.txt)
+
+**Tempo:** 30 minutos
+
+**Próximo:** Lightbox (se OK)
+
+---
+
+🚀 **COMECE!** 🚀
+
+---

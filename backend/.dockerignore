@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log*
+*.log
+
+# vcs and editor
+.git
+.gitignore
+.vscode
+.idea
+
+# env files
+.env
+.env.*
+!.env.example
+
+# runtime/generated data
+uploads
+coverage
+
+# OS
+.DS_Store

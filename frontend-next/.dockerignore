@@ -1,0 +1,29 @@
+# dependencies and build artifacts
+node_modules
+.next
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# vcs and editor files
+.git
+.gitignore
+.vscode
+.idea
+
+# tests and coverage
+coverage
+cypress
+playwright-report
+
+# env/local files not needed in image context
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store

@@ -1,0 +1,24 @@
+# Dockerfile.dev para Frontend Vue.js + Vite
+# Roda em modo desenvolvimento com hot reload
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Instalar dependências do sistema
+RUN apk add --no-cache git
+
+# Copiar package.json primeiro (para cache de layers)
+COPY package*.json ./
+
+# Instalar todas as dependências (incluindo devDependencies)
+RUN npm ci
+
+# Copiar código fonte
+COPY . .
+
+# Expor porta do Vite
+EXPOSE 5173
+
+# Comando padrão - executa vite diretamente com host 0.0.0.0
+CMD ["npx", "vite", "--host", "0.0.0.0"]
