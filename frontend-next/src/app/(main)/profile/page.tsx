@@ -100,7 +100,7 @@ export default function ProfilePage() {
               <div className="relative">
                 <Avatar
                   src={getAvatarUrl()}
-                  size="2xl"
+                  size="xl"
                   ring
                   className="shadow-xl"
                 />
