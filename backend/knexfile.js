@@ -28,7 +28,11 @@ const buildConnectionFromUrl = (dbUrl) => {
   }
 };
 
-const dbUrl = process.env.DATABASE_URL || process.env.MYSQL_URL || process.env.DB_URL;
+const dbUrl =
+  process.env.DATABASE_URL ||
+  process.env.MYSQL_URL ||
+  process.env.MYSQL_PUBLIC_URL ||
+  process.env.DB_URL;
 const parsedUrlConnection = buildConnectionFromUrl(dbUrl);
 
 const explicitHost = process.env.DB_HOST;
